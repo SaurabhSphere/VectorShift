@@ -279,8 +279,9 @@ export const useStore = create((set, get) => ({
       }
 
       set({ submitLoading: true });
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://vectorshift-7itg.onrender.com';
       try {
-        const response = await fetch('http://localhost:8000/pipelines/parse', {
+        const response = await fetch(`${BACKEND_URL}/pipelines/parse`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -307,7 +308,7 @@ export const useStore = create((set, get) => ({
       } catch (error) {
         set({
           submitResult: {
-            error: `Failed to connect to the backend server. Make sure your FastAPI backend is running on http://localhost:8000.\n\nDetail: ${error.message}`,
+            error: `Failed to connect to the backend server. Make sure the backend server is running at ${BACKEND_URL}.\n\nDetail: ${error.message}`,
           },
           showSubmitModal: true,
         });
