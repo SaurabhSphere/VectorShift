@@ -208,6 +208,18 @@ backend/
 
 ---
 
+## 🌐 Deployed Environments
+
+The project is fully integrated and deployed in production environments:
+*   **Production Frontend:** [https://vectorshiftyc.netlify.app/](https://vectorshiftyc.netlify.app/)
+*   **Production Backend API:** [https://vectorshift-7itg.onrender.com/](https://vectorshift-7itg.onrender.com/)
+
+### Configuration Details
+*   **Frontend Endpoint Resolution:** The frontend dynamically targets the deployed Render backend by default. For local custom environments, you can configure the backend URL using the environment variable `REACT_APP_BACKEND_URL`.
+*   **Backend CORS Policy:** The FastAPI backend is configured to restrict origins and explicitly whitelist `https://vectorshiftyc.netlify.app` along with local development endpoints (`http://localhost:3000`, `http://localhost:3001`), resolving browser credential and origin headers compatibility issues.
+
+---
+
 ## 💻 Getting Started & Local Setup
 
 ### Prerequisites
