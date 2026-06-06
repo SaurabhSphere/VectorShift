@@ -235,15 +235,26 @@ The project is fully integrated and deployed in production environments:
     ```bash
     cd backend
     ```
-2.  Install Python dependencies:
+2.  Create and activate a Python virtual environment:
+    *   **Windows (PowerShell):**
+        ```powershell
+        python -m venv venv
+        .\venv\Scripts\Activate.ps1
+        ```
+    *   **macOS / Linux:**
+        ```bash
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
+3.  Install Python dependencies from the `requirements.txt` file:
     ```bash
-    pip install fastapi uvicorn pydantic
+    pip install -r requirements.txt
     ```
-3.  Launch the FastAPI server using Uvicorn:
+4.  Launch the FastAPI server using Uvicorn:
     ```bash
     uvicorn main:app --reload --port 8000
     ```
-    *   The backend will be running on [http://localhost:8000](http://localhost:8000). You can inspect the interactive OpenAPI documentation at [http://localhost:8000/docs](http://localhost:8000/docs).
+    *   The backend will run on [http://localhost:8000](http://localhost:8000). You can inspect the interactive OpenAPI documentation at [http://localhost:8000/docs](http://localhost:8000/docs).
 
 #### 2. Setup the React Frontend
 1.  Open a new terminal window and navigate into the `frontend/` directory:
